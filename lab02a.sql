@@ -1,8 +1,6 @@
 /*
   Lab 02: MariaDB Tutorial
   CSC 362 Database Systems
-  Originally by Thomas E. Allen
-  Updated by William Bailey
 */
 
 /* Create the database (dropping the previous version if necessary */
