@@ -54,4 +54,36 @@ SELECT title AS 'Kafka Books'
   JOIN authors USING (author_id)
  WHERE name_last = 'Kafka';
 
+
+
+/* Create the database (dropping the previous version if necessary */
+DROP DATABASE IF EXISTS school;
+
+CREATE DATABASE school;
+
+USE school;
+
+/* Create table instructor*/
+
+CREATE TABLE instructors(
+  PRIMARY KEY (instructor_id),
+  instructor_id INT AUTO_INCREMENT, 
+  inst_first_name VARCHAR(20), 
+  inst_last_name VARCHAR(20),
+  campus_phone VARCHAR(20)
+);
+
+/* Populating the information in the instructor table */
+INSERT INTO instructors(inst_first_name, inst_last_name, campus_phone)
+VALUES ('Kira', 'Bently', '363-9948'),
+       ('Timothy', 'Ennis', '527-4992'),
+       ('Shannon', 'Black', '322-5992'),
+       ('Estela', 'Rosales', '322-6992');
+
+
+/* Using Select to display from the table */
+
+SELECT * FROM instructors;
+
+
 /* End of file lab02a.sql */
