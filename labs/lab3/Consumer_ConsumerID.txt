@@ -1,0 +1,55 @@
+Field Name: ConsumerID
+Parent Table: Consumers
+Alias(es): _
+Specification Type:
+Unique: Yes
+Generic: No
+Replica: No
+Source Specification: _
+Shared By: _
+
+Description: Unique identifier for consumers
+
+PHYSICAL ELEMENTS
+
+Data Type: INT
+Length: _
+Decimal Places: _
+Character Support:
+Letters (A-Z): _
+Numbers (0-9): Yes
+Keyboard (.,/$#%): _
+Special (©®™Σπ): _
+
+LOGICAL ELEMENTS
+
+Key Type: Non: Yes
+Primary: Yes
+Foreign: No
+Alternate: No
+
+Key Structure: Simple: Yes
+Composite: No
+
+Uniqueness: Non-unique: No
+Unique: Yes
+
+Null Support: Nulls OK: No
+No nulls: Yes
+
+Values Entered By: User: No
+System: Yes
+
+Required Value: No: Yes
+Yes: No
+
+Range of Values: _
+
+Edit Rule:
+Enter now, edits allowed: No
+Enter now, edits not allowed: Yes
+Enter later, edits allowed: No
+Enter later, edits not allowed: Yes
+Not determined at this time: No
+
+NOTES: Unique identifier for consumers. Auto-incremented.
