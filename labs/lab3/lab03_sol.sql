@@ -122,9 +122,9 @@ CREATE TABLE Consumers(
 /* Rating Table Creating */ 
 
 CREATE TABLE Ratings(
-    MovieID INT, 
-    ConsumerID INT, 
-    WhenRated DATETIME, 
+    MovieID     INT, 
+    ConsumerID  INT, 
+    WhenRated   DATETIME, -- Line up the data types like this. -- WB
     NumberStars INT, 
     PRIMARY KEY (MovieID, ConsumerID), 
     FOREIGN KEY (MovieID) REFERENCES Movies(MovieID), 
