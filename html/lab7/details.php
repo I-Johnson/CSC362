@@ -1,9 +1,16 @@
+<?php
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Database Details</title>
 </head>
 <body>
+<a href="connect.php">View available databases</a> &nbsp;
 <?php
     $dbhost = 'localhost';
     $dbuser = 'johnsonsubedi'; // Hard-coding credentials directly in code is not ideal: (1) we might have to 
@@ -29,11 +36,10 @@
             
             // Retrieving information about the tables in the selected database
             $tables = $conn->query("SHOW TABLES");
-
             if ($tables) {
                 $numTables = $tables->num_rows;
                 echo "$numTables row(s) in results.<br>";
-                echo "<h2>Tables in the ", $selectedDatabase, " Database:</h2>";
+                echo "<h3>Tables in the ", $selectedDatabase, " Database:</h3>";
                 while ($table = $tables->fetch_array()) {
                     echo $table[0] . "<br>";
                 }
@@ -48,7 +54,20 @@
         echo "<p>No database name specified.</p>";
     }
     ?>
-
+    <br>
+    <h3>Field Details</h3>
+    <?php
+        echo $tables->field_count . " field(s) in results.<br>";
+        echo $tables->num_rows . " row(s) in results.";
+  ?> 
+    <h2>More Details: </h2>
+    <?php
+        while ($field = $tables->fetch_field()) {
+            echo "<h4>" . "Field Name: " . $field->name . "</h4>";
+            echo "  Field Type: " . $field->type . "<br>";
+            echo "Field Length: " . $field->length . " bytes";
+        }
+    ?>
     <p><a href="connect.php">Back to Database List</a></p>
 </body>
 </html>
