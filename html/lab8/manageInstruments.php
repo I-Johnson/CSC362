@@ -1,10 +1,11 @@
 <?php
-error_reporting(E_ALL);
 ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 // Function to establish a database connection
 function getDatabaseConnection() {
-    $config = parse_ini_file('/home/johnsonsubedi/CSC362/mysql.ini');
+    $config = parse_ini_file('/home/johnsonsubedi/CSC362/mysqli.ini');
     $conn = new mysqli(
         $config['mysqli.default_host'],
         $config['mysqli.default_user'],
@@ -55,11 +56,17 @@ function resultToHtmlTable($result) {
         <input type="submit" value="Delete Selected">
     </form>
 
-    <form action="insertInstruments.php" method="POST">
-        <input type="submit" value="Insert New Records">
+
+    <form method="POST" action="insertInstruments.php">
+        <input type="submit" name="insertButton" value="Insert New Records">
+    </form>
+
+    <form method="POST" action="deleteall.php">
+        <input type="submit", name="delete_all", value="Delete All Records">
     </form>
 
     <?php
+
 }
 
 // Main code
@@ -67,5 +74,18 @@ $conn = getDatabaseConnection();
 $query = "SELECT * FROM instruments";
 $result = $conn->query($query);
 
-resultToHtmlTable($result);
+if ($result === false) {
+    echo "Error executing the query: " . $conn->error;
+    exit();
+}
+
+if ($result->num_rows > 0) {
+    resultToHtmlTable($result);
+} else {
+    echo "No records found";
+    resultToHtmlTable($result);
+}
+
 ?>
+
+

@@ -2,11 +2,21 @@
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
+
+
+
+// Toggle Dark Mode
+$mode = "user_mode";
+$light = "light";
+$dark = "dark";
+$button_pressed = "yes";
+$button_label = "Toggle Dark/Light Modes";
 ?>
 
 <?php
     $config = parse_ini_file('/home/johnsonsubedi/CSC362/mysqli.ini');
     // $dbname = 'instrument_rentals';
+
     $conn = new mysqli(
                 $config['mysqli.default_host'],
                 $config['mysqli.default_user'],
