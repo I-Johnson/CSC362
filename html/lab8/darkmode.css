@@ -1,0 +1,36 @@
+h1, h2, h3, p, pre, table, ul, li {
+    max-width: 800px;
+    color: white;
+    font-family: "Comic Sans MS", "Comic Sans", "cursive";
+}
+
+table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+th, td, tr {
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+body {
+    background-color: #262626;
+}
+
+thead {
+    font-weight: bold;
+}
+
+a:link {
+    color: cornflowerblue;
+    background-color: transparent;
+    text-decoration-line: underline;
+  }
+  
+a:visited {
+    color: pink;
+    background-color: transparent;
+    text-decoration-line: underline;
+  }

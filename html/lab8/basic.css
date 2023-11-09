@@ -1,0 +1,24 @@
+h1, h2, h3, p, pre, table, ul, li {
+    max-width: 800px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  th, td, tr, thead {
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  body {
+    background-color: white;
+  }
+
+  thead {
+    font-weight: bold;
+  }
