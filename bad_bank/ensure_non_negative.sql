@@ -1,0 +1,11 @@
+DELIMITER //
+
+CREATE OR REPLACE TRIGGER ensure_non_negative
+BEFORE UPDATE ON users FOR EACH ROW
+IF NEW.user_balance < 0.000 THEN
+    SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Insufficient Fund'
+END IF;
+
+//
+DELIMITER ;
+
